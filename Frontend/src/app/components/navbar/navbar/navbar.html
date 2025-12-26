@@ -1,0 +1,13 @@
+<nav class="nav">
+  <a routerLink="/" class="logo">SmartTax</a>
+
+  <div class="links" *ngIf="auth.isLoggedIn()">
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/cases">Cases</a>
+    <button (click)="auth.logout()">Logout</button>
+  </div>
+
+  <div class="links" *ngIf="!auth.isLoggedIn()">
+    <a routerLink="/login">Login</a>
+  </div>
+</nav>

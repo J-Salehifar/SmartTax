@@ -1,0 +1,10 @@
+<div class="login-box">
+  <h2>ورود به SmartTax</h2>
+
+  <input placeholder="نام کاربری" [(ngModel)]="username">
+  <input type="password" placeholder="رمز عبور" [(ngModel)]="password">
+
+  <button (click)="login()">ورود</button>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+</div>

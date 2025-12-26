@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>ثبت اظهارنامه جدید</h2>
+
+
+  <form (ngSubmit)="submitForm()">
+
+
+    <label>نام کامل:</label>
+    <input [(ngModel)]="formData.name" name="name" required />
+
+
+    <label>کد ملی:</label>
+    <input [(ngModel)]="formData.national_id" name="national_id" required />
+
+
+    <label>درآمد (تومان):</label>
+    <input type="number" [(ngModel)]="formData.income" name="income" required />
+
+
+    <label>توضیحات:</label>
+    <textarea [(ngModel)]="formData.description" name="description"></textarea>
+
+
+    <button type="submit" [disabled]="loading">
+      ثبت پرونده
+    </button>
+
+
+    <p class="msg">{{ message }}</p>
+  </form>
+</div>

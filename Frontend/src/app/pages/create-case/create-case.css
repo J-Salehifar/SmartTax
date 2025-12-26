@@ -1,0 +1,37 @@
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+}
+
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #2b6cb0;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+
+button:disabled {
+  opacity: 0.6;
+}
+
+
+.msg {
+  margin-top: 12px;
+  color: green;
+}

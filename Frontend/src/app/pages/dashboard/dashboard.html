@@ -1,0 +1,32 @@
+<div class="dashboard">
+  <h1>Dashboard</h1>
+
+  <ng-container *ngIf="loaded(); else loading">
+    <div class="stats">
+      <div class="card">
+        <h3>📂 Total Cases</h3>
+        <p>{{ totalCases() }}</p>
+      </div>
+      <div class="card">
+        <h3>💰 Total Income</h3>
+        <p>{{ totalIncome() | number }}</p>
+      </div>
+      <div class="card">
+        <h3>🧾 Total Tax</h3>
+        <p>{{ totalTax() | number }}</p>
+      </div>
+      <div class="card warning">
+        <h3>📈 Growth %</h3>
+        <p>{{ growthPercent() }}%</p>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="revenueChart"></canvas>
+    </div>
+  </ng-container>
+
+  <ng-template #loading>
+    <p>Loading dashboard data...</p>
+  </ng-template>
+</div>
