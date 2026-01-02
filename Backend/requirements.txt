@@ -19,3 +19,4 @@ sqlparse==0.5.4
 threadpoolctl==3.6.0
 tzdata==2025.3
 virtualenv==20.35.4
+gunicorn==21.2.0
