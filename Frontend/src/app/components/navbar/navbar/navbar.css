@@ -22,4 +22,10 @@
   border: none;
   cursor: pointer;
   font-size: 14px;
+  text-decoration: none;
+}
+
+.links a:hover,
+.links button:hover {
+  opacity: 0.85;
 }

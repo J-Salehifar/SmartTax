@@ -11,5 +11,5 @@ import { AuthService } from '../../../services/auth.service';
   styleUrls: ['./navbar.css']
 })
 export class Navbar {
-  constructor(public auth: AuthService) {} // حتماً public باشد
+  constructor(public auth: AuthService) {}
 }

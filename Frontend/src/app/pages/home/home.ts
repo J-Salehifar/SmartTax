@@ -15,7 +15,7 @@ export class Home {
 
   get isLoggedIn(): boolean {
     if (isPlatformBrowser(this.platformId)) {
-      return !!localStorage.getItem('token');
+      return !!localStorage.getItem('access');
     }
     return false;
   }
