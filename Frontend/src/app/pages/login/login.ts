@@ -25,7 +25,9 @@ export class Login {
         localStorage.setItem('refresh', res.refresh);
         this.router.navigate(['/dashboard']);
       },
-      error: () => this.error = 'نام کاربری یا رمز عبور اشتباه است'
+      error: () => {
+        this.error = 'Invalid username or password';
+      }
     });
   }
 }

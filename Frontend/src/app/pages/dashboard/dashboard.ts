@@ -30,25 +30,27 @@ export class Dashboard implements OnInit {
 
     this.api.getCases().subscribe({
       next: (cases: any[]) => {
-        console.log('DASHBOARD CASES ✅', cases);
+        console.log('DASHBOARD DATA LOADED ✅', cases);
 
-        // Basic stats
+        // Summary statistics
         this.totalCases.set(cases.length);
-        const incomeSum = cases.reduce((s, c) => s + c.income, 0);
-        const taxSum = cases.reduce((s, c) => s + c.tax_amount, 0);
+
+        const incomeSum = cases.reduce((sum, c) => sum + c.income, 0);
+        const taxSum = cases.reduce((sum, c) => sum + c.tax_amount, 0);
+
         this.totalIncome.set(incomeSum);
         this.totalTax.set(taxSum);
 
-        // Growth example calculation
-        this.growthPercent.set(Math.floor(Math.random() * 20)); // demo value
+        // Demo growth value (for portfolio presentation)
+        this.growthPercent.set(Math.floor(Math.random() * 20));
 
         this.loaded.set(true);
 
-        // Render chart
+        // Render income chart
         setTimeout(() => this.renderChart(cases), 100);
       },
       error: (err) => {
-        console.error('DASHBOARD ERROR ❌', err);
+        console.error('DASHBOARD LOAD ERROR ❌', err);
         this.loaded.set(true);
       }
     });
@@ -64,10 +66,10 @@ export class Dashboard implements OnInit {
     this.revenueChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: labels,
+        labels,
         datasets: [{
           label: 'Income per Case',
-          data: data,
+          data,
           backgroundColor: '#3b82f6'
         }]
       },
